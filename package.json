@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install_deps_clawling": "npm install --prefix ./monorepo/crawling/",
+    "install_deps_back": "npm install --prefix ./monorepo/back/",
+    "install_deps_front": "npm install --prefix ./monorepo/front/",
+    "install_deps": "npm run install_deps_clawling && npm run install_deps_back && npm run install_deps_front"
   },
   "author": "eneeseene",
   "license": "MIT"

@@ -14,6 +14,7 @@
     "axios": "^0.27.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
+    "ethereum-lite-explorer": "file:../..",
     "express": "^4.18.1",
     "mysql": "^2.18.1",
     "sha3": "^2.1.4"

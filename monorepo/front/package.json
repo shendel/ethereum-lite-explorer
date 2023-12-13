@@ -27,6 +27,7 @@
     "dayjs": "^1.11.7",
     "dotenv": "^10.0.0",
     "dotenv-expand": "^5.1.0",
+    "ethereum-lite-explorer": "file:../..",
     "ethers": "^5.7.2",
     "file-loader": "^6.2.0",
     "fs-extra": "^10.0.0",

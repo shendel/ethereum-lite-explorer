@@ -1,2 +1,8 @@
 
 .env
+monorepo/crawling/package-lock.json
+monorepo/crawling/node_modules/
+monorepo/back/node_modules/
+monorepo/back/package-lock.json
+monorepo/front/node_modules/
+monorepo/front/package-lock.json
