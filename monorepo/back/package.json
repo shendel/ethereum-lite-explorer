@@ -23,6 +23,7 @@
     "express-rate-limit": "^6.6.0",
     "moment": "^2.29.4",
     "mysql": "^2.18.1",
+    "mysql2": "^3.6.5",
     "nodemon": "^2.0.19"
   }
 }
