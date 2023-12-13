@@ -2,11 +2,11 @@ const { db } = require('./db')
 const { etherApi } = require('./etherApi')
 const { SHA3 } = require('sha3')
 
-const rpcGetLatestData = (blockNumber) => {
-  eth_getBlockByNumber(blockNumber)
+const rpcGetLatestData = (blockNumber, skipOnNull) => {
+  eth_getBlockByNumber(blockNumber, skipOnNull)
 }
 
-const eth_getBlockByNumber = async(blockNumber) => {
+const eth_getBlockByNumber = async(blockNumber, skipOnNull) => {
   let hex = blockNumber.toString(16)
 
   const response = await etherApi({
@@ -17,6 +17,8 @@ const eth_getBlockByNumber = async(blockNumber) => {
   })
 
   if(response.data.result === null){
+    console.log('Null')
+    if (skipOnNull) return
     setTimeout(()=>eth_getBlockByNumber(blockNumber),1000)
   } else {
     let blockTxArr = response.data.result.transactions
@@ -77,7 +79,7 @@ const db_insertTxsData = async(blockTxArr, time_stamp) => {
 
         
         const contractDataInsert = 
-          "INSERT INTO contract_data " +
+          "INSERT IGNORE INTO contract_data " +
           "(blockNumber, contractAddress, sha3) VALUES "+
           "(?,            ?,              ?);"
         const dbArgs = [
@@ -93,7 +95,7 @@ const db_insertTxsData = async(blockTxArr, time_stamp) => {
         toAddress = blockTxArr[i].to
       }
       
-      const txHashInsert = "INSERT INTO transaction_data (txHash, blockNumber, blockNumberHex, time_stamp ,fromAddress, toAddress, value) VALUES (?, ?, ?, ?, ?, ?, ?);"
+      const txHashInsert = "INSERT IGNORE INTO transaction_data (txHash, blockNumber, blockNumberHex, time_stamp ,fromAddress, toAddress, value) VALUES (?, ?, ?, ?, ?, ?, ?);"
       db.query(txHashInsert, [txHash, blockNumber, blockNumberHex, time_stamp, fromAddress, toAddress, value], (err, result) => {
         if(err) {
           console.log("[DB Fail] ", err.message)
