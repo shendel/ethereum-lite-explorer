@@ -14,7 +14,9 @@ const rateLimit = require("express-rate-limit");
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
+if (process.env.BACKEND_TRUST_PROXY) {
+  app.set('trust proxy', 1)
+}
 // express-rate-limit
 const limiter = rateLimit({
   windowMs: 60 * 1000, // 1 minute interval
