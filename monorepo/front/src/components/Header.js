@@ -57,9 +57,6 @@ const Header = () => {
           </Link>
         </li>
         <li>
-          <h2>|</h2>
-        </li>
-        <li>
           <h3>{config.network}</h3>
         </li>
       </ul>

@@ -14,22 +14,29 @@
 }
 
 .navBar {
-    display: flex;
-    list-style: none;
-    align-items: center;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+.navBar li {
+  background: var(--navbar-bg);
+  border-radius: var(--navbar-radius);
 }
 
 .navBar li:hover{
-    background-color: #08082D;
-    border-radius: 10px;
+  background: var(--navbar-hover-bg);
 }
 
-.navBar h1{
-    margin-left: 20px;
-    margin-right: 20px;
-    font-size: 18px;
-    color: white;
-    padding: 5px;
+.navBar h1 {
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 18px;
+  color: var(--navbar-fg);
+  padding: 5px;
+}
+
+.navBar li:hover h1 {
+  color: var(--navbar-hover-fg);
 }
 
 .navBar h2{

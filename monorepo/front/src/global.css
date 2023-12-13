@@ -1,0 +1,11 @@
+:root {
+  --navbar-radius: 10px;
+  --navbar-bg: none;
+  --navbar-fg: #FFF;
+  --navbar-hover-bg: #08082D;
+  --navbar-hover-fg: #FFF;
+}
+BODY {
+  background: linear-gradient(#000000, #212121);
+  color: #FFF;
+}
