@@ -1,6 +1,11 @@
-const express = require("express");
-const app = express();
-const port = 3001;
+require('dotenv').config({ path: '../../.env' })
+
+const express = require("express")
+const app = express()
+
+const server_host = process.env.BACKEND_HOST
+const server_port = process.env.BACKEND_PORT
+
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const indexRoute = require('./routes')
@@ -52,6 +57,6 @@ app.use('/chartMonthlyTxsByDate', limiter, indexRoute)
 app.use('/chartWeeklyTxsByDate', limiter, indexRoute)
 
 
-app.listen(port, () => {
-  console.log(`Backend started at http://localhost:${port}`);
+app.listen(server_port, server_host, () => {
+  console.log(`Backend started at http://${server_host}:${server_port}`);
 });

@@ -1,11 +1,12 @@
-const express = require("express");
-const app = express();
-const port = 3006;
+require('dotenv').config({ path: '../../.env' })
+
+const express = require("express")
+const app = express()
+const server_host = process.env.CRAWL_HOST
+const server_port = process.env.CRAWL_PORT
+
 const { rpcCheckBlockNum } = require('./rpcCheckBlockNum')
 const { rpcRecheckBlockNum } = require('./rpcRecheckBlockNum')
-
-
-require('dotenv').config()
 
 let rpcCheckBlockNumError = false
 // forever
@@ -18,6 +19,6 @@ app.get("/", (req, res) =>{
   })
 })
 
-app.listen(port, () => {
-  console.log(`RPC Crawl server started at ${port}`);
+app.listen(server_port, server_host, () => {
+  console.log(`RPC Crawl server started at http://${server_host}:${server_port}`);
 })

@@ -1,8 +1,7 @@
-require('dotenv').config()
-
+console.log(process.env)
 const config = {
-  backend: process.env.BACKEND,
-  rpc: process.env.RPC,
+  backend: process.env.REACT_APP_BACKEND,
+  rpc: process.env.REACT_APP_RPC,
   currency: 'PROXIMA',
   network: 'mainnet'
 }

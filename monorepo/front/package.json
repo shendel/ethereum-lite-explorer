@@ -40,6 +40,7 @@
     "jest-resolve": "^27.4.2",
     "jest-watch-typeahead": "^1.0.0",
     "mini-css-extract-plugin": "^2.4.5",
+    "os-browserify": "^0.3.0",
     "postcss": "^8.4.4",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^6.2.1",
@@ -73,9 +74,8 @@
     "workbox-webpack-plugin": "^6.4.1"
   },
   "scripts": {
-    "start": "cross-env GENERATE_SOURCEMAP=false node scripts/start.js",
-    "build": "cross-env GENERATE_SOURCEMAP=false node scripts/build.js",
-    "test": "cross-env GENERATE_SOURCEMAP=false node scripts/test.js"
+    "start": "cross-env GENERATE_SOURCEMAP=false node -r dotenv/config scripts/start.js dotenv_config_path=../../.env",
+    "build": "cross-env GENERATE_SOURCEMAP=false node scripts/build.js"
   },
   "browserslist": {
     "production": [

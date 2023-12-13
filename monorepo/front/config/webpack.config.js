@@ -336,7 +336,7 @@ module.exports = function (webpackEnv) {
           babelRuntimeEntryHelpers,
           babelRuntimeRegenerator,
         ]),
-      ],
+      ]
     },
     module: {
       strictExportPresence: true,
@@ -725,6 +725,7 @@ module.exports = function (webpackEnv) {
           },
         })
     ].filter(Boolean),
+    
     // Turn off performance processing because we utilize
     // our own hints via the FileSizeReporter
     performance: false,
