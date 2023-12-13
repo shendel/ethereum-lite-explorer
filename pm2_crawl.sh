@@ -1,2 +1,1 @@
-﻿!#/bin/bash
-npm run start_crawling
+﻿npm run start_crawling

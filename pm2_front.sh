@@ -1,2 +1,1 @@
-﻿!#/bin/bash
-npm run start_front
+﻿npm run start_front
