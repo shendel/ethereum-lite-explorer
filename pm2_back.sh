@@ -1,1 +1,1 @@
-﻿npm run start_back
+npm run start_back
