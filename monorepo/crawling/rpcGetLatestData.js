@@ -77,7 +77,8 @@ const db_insertTxsData = async(blockTxArr, time_stamp) => {
         const byteCode = contractByteCode.data.result
         const hash = new SHA3(256);
 
-        
+        hash.update(byteCode)
+
         const contractDataInsert = 
           "INSERT IGNORE INTO contract_data " +
           "(blockNumber, contractAddress, sha3) VALUES "+
